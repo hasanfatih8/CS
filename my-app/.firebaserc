@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "csvs-f0f9c": {
+      "hosting": {
+        "my-app": [
+          "csvs-f0f9c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "csvs-f0f9c"
+  }
+}
