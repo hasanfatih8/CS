@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/authentication.service';
 
@@ -15,9 +16,18 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required])
   });
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private httpClient: HttpClient ) { }
 
   ngOnInit(): void {
+  }
+
+  onLogin(loginForm: NgForm) {
+    console.log(loginForm);
+    this.httpClient.get(
+      'https://csvs-f0f9c-default-rtdb.europe-west1.firebasedatabase.app/gBovhXf9LTPq3dBf8ueDwaOChwu2'
+    ).subscribe((name)=>{
+      console.log(name)
+    });
   }
 
   get email() {
