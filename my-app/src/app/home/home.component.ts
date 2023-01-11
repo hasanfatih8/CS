@@ -22,10 +22,13 @@ export class HomeComponent implements OnInit {
       .subscribe(user => this.userName$ = user.name);
   }
 
+  
+  
+
   ngOnInit(): void {
     this.authService.currentUser$.subscribe(user => {
       if(user){
-         this.getUserName('gBovhXf9LTPq3dBf8ueDwaOChwu2');
+         this.getUserName('gBovhXf9LTPq3dBf8ueDwaOChwu2.json');
       }
     });
   }
